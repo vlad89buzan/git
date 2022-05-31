@@ -10,7 +10,7 @@
 
 <body>
 	<div class="wrapper">
-		
+
 		<main>
 			<p>git config --global user.name "John Doe"</p>
 			<p>git config --global user.email johndoe@example.com</p>
@@ -21,8 +21,107 @@
 			<p>git remote add origin https://github.com/vlad89buzan/git</p>
 			<p>git push -u origin master</p>
 
+			<p>git clone https://github.com/vlad89buzan/git.git</p>
+			<p>//Отмена изменения</p>
+			<p>	///////////////////</p>
+			<p>//Отменить изменения до команды add</p>
+			<p>git checkout -- index.html //один файл</p>
+			<p>git checkout -- . //все файлы</p>
+			<p>//Отменить изменнеия после команды add</p>
+			<p>	git reset index.html //один файл</p>
+			<p>git reset . //все файлы</p>
+			<p>//Отменить изменения после команды commit</p>
+			<p>git reset --soft HEAD^1 //сбросить на 1 комминт назад и сохранить все изменнеия локально</p>
+			<p>git reset --hard HEAD^1 //сброситься и удалить все изменения</p>
+			<p>git log -5 //посмотреть последние пять коммитов</p>
+			<p>////////////////////////////</p>
+			<p>//Команды pull, fetch, merge</p>
+			<p>////////////////////////////</p>
+			<p>git push origin HEAD</p>
+			<p>git pull = git fetch + git merge //</p>
+			<p>git fetch origin // имя папки вместо origin</p>
+			<p>git merge origin/master //объединить ветки
+			</p>
+			<p>/////////////////////////</p>
+			<p>//Ветвление</p>
+			<p>/////////////////////////</p>
+			<p>git branch //посмотреть ветки, со звездочкой - текущая</p>
+			<p>git branch -v //посмотреть ветки, и последние коммиты в них</p>
+			<p>git branch название_новой_ветки //создать ветку</p>
+			<p>git checkout название_ветки //переключиться на другую ветку</p>
+			<p>git checkout -b fix_about //Создать ветку и перейти к ней</p>
+			<p>git push --set-upstream origin название_ветки //залить на github в нужную ветку</p>
+			<p>git branch -m new_some_branch //переименовать текущую ветку</p>
+			<p>git checkout номер_коммита //перейти к нужному коммиту</p>
+			<p>git checkout -b название_ветки //создать ветку с выбранного ранее коммита</p>
+			<p>//////////////////////////</p>
+			<p>//Объединение веток</p>
+			<p>//////////////////////////</p>
+			<p>git checkout master //перейти на ветку master</p>
+			<p>git merge название_ветки //объединить ветки</p>
+			
+			<p>git branch --merged //посмотреть все объединенные ветки</p>
+			<p>git branch --no-merged //посмотреть все не объединенные ветки</p>
+			<p>			git branch -d название_ветки //удалить ветку или -D чтобы удалить не смерженую ветку
+			</p>
+			<p>			//////////////////////////
+			</p>
+			<p>//Отмена слияния веток</p>
+			<p>//////////////////////////</p>
+			<p>git reset --hard HEAD^1 //отменить последнее действие</p>
+			<p>git revert код_коммита //вернуться к коммиту</p>
+			<p>git revert код_коммита1^..код_коммита2 //отменить диапазон коммитов</p>
+			<p>git revert -m 1 коммит_мерджа</p>
+			<p>//////////////////////////</p>
+			<p>//Перенос коммита в другую ветку</p>
+			<p>//////////////////////////</p>
+			<p>git checkout название_ветки //Перейти туда куда будем вставлять изменения</p>
+			<p>git cherry-pick код_коммита1 код_коммита2 //Добаляем нужный коммит в текущую ветку (через пробел)</p>
+			<p>//Можно создать новую ветку с текущего места, а в ветке master удалить один коммит</p>
+			<p>///////////////////</p>
+			<p>//Алиасы - C:\Users\ismail\.gitconfig</p>
+			<p>///////////////////</p>
+			<p>s = status --short</p>
+			<p>st = status</p>
+			<p>l = log --oneline --graph --decorate --all</p>
+			<p>g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold
+				cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n
+				%C(white)%s%C(reset)'</p>
+			<p>br = branch</p>
+			<p>co = checkout</p>
+			<p>////////////////////</p>
+			<p>//Скрыть изменения</p>
+			<p>////////////////////</p>
+			<p>git stash //если есть измененные файлы и надо перейти на другую ветку</p>
+			<p>git stash list //показать что скрыто</p>
+			<p>git stash apply //востановить последний стэш (останется в списке стэшей)</p>
+			<p>git stash clear //удалить все записи стэша</p>
+			<p>///////////////////</p>
+			<p>//Добавить ветку в конец другой</p>
+			<p>///////////////////</p>
+			<p>git rebase имя_ветки</p>
+			<p>git rebase --onto имя_ветки_куда имя_ветки_начала имя_ветки_куда</p>
+			<p>git rebase --continue</p>
+			<p>git rebase -i HEAD~6 //интерактивный ребэйс на 6 коммитов</p>
+			<p>////////////////////</p>
+			<p>//Доп. команды</p>
+			<p>////////////////////</p>
+			<p>git rm //посмотреть файлы</p>
+			<p>git rm имя_файла //удалить нужынй файл</p>
+			<p>git mv имя_файла имя_каталога/имя_файла //переместить файл в каталог</p>
+			<p>git add *.txt //добавить все файлы txt</p>
+			<p>git show код_коммита //посомтреть изменения в коммите</p>
+			<p>git add любые_символы*.txt //добавить все файлы любые_символы.txt</p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			
 		</main>
-		
+
 	</div>
 	<script src="js/app.min.js"></script>
 </body>
