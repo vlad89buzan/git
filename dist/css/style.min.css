@@ -465,6 +465,7 @@ img {
 
   .menu__body {
     position: fixed;
+    z-index: 5;
     top: 0;
     left: -100%;
     width: 100vw;
